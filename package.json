@@ -2,9 +2,14 @@
   "name": "roameth",
   "version": "1.0.0",
   "description": "Roam Free",
-  "main": "server.js",
+  "main": "src/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "db:create": "createdb roameth",
+    "db:drop": "dropdb roameth",
+    "db:schema": "psql -d roameth < src/models/database/schema/schema.sql",
+    "db:seed": "psql -d roameth < src/models/database/seed/seed.sql"
   },
   "author": "Fodé Diop",
   "license": "MIT",
@@ -15,7 +20,8 @@
     "dotenv": "^4.0.0",
     "ejs": "^2.5.7",
     "express": "^4.16.0",
-    "pg-promise": "^6.10.1"
+    "pg-promise": "^6.10.1",
+    "web3": "^1.0.0-beta.22"
   },
   "devDependencies": {
     "eslint": "^4.7.2",
