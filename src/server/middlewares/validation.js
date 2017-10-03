@@ -1,4 +1,4 @@
-const {isEmpty} = reauire('../../models/utils')
+const {isEmpty} = require('../../models/utils')
 
 const isLoggedIn = (request, response, next) => {
   if (!request.session.user) {
@@ -11,29 +11,17 @@ const isLoggedIn = (request, response, next) => {
 
 const validateSignUpForm = (request, response, next) => {
   const {ermail, password} = request.body
-
-  if (isEmpty(name, email,password)){
-    next(new Error('empty sign-up field'))
-  } else {
-    next()
-  }
+  isEmpty(name, email,password) ? next(new Error('empty sign-up field')) : next()
 }
 
-const validateLoginForm = (request, response, next) {
+const validateLoginForm = (request, response, next) => {
   const {email, password} = req.body
-
-  if (isEmpty(email, password)) {
-    next(new Error('empty login fields'))
-  }  else {
-    next()
-  }
+  isEmpty(email, password)) ? next(new Error('empty login fields')) : next()
 }
 
 const validatePostReviewForm = (request, response, next) => {
   const {content} = request.body
-
-  if (isEmpty(content)) {
-    next(new Error('empty review post'))
+  isEmpty(content)) ? next(new Error('empty review post')) : next()
   }
 }
 

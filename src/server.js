@@ -2,7 +2,7 @@ const express = require('express')
 const ejs = require('ejs')
 const path = require('path')
 const session = require('cookie-session')
-const {isLoggedIn} = require('./middlewares/validation')
+const {isLoggedIn} = require('./server/middlewares/validation')
 
 const routes = require('./server/routes')
 const errorhandler = require('./server/errorHandler')

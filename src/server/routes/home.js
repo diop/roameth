@@ -6,7 +6,7 @@ const { isLoggedIn } = require('../middlewares/validation')
 
 router.get('/', isLoggegIn, (request, response) => {
   Promise.all([cities.get(), reviews.getThreeNewest()])
-    .then([cities, reviews] => {
+    .then([cities, reviews]) => {
       response.render('index', {cities, reviews, loggedIn: request.isLoggedIn})
     })
     .catch((err) => {

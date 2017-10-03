@@ -1,4 +1,4 @@
-const isEmtpy = (name, email, password) => {
+const isEmpty = (name, email, password) => {
   return (name === '' || password === '' || email === '')
 }
 
